@@ -3,306 +3,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Set Up Your Marvin AI Tutor</title>
+    <title>Marvin - The Algebra 2 Tutor</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Custom font for a friendly feel */
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Outfit', sans-serif;
+        }
+        h1, h2, h3, .friendly-font {
+            font-family: 'Fredoka', sans-serif;
+        }
+        .math-pattern {
+            background-color: #f0f9ff;
+            background-image: radial-gradient(#bae6fd 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .blob-shape {
+            position: absolute;
+            z-index: 0;
+            opacity: 0.6;
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-blue-100 to-purple-100 min-h-screen flex items-center justify-center py-10 px-4">
-    <div class="bg-white p-8 md:p-12 rounded-2xl shadow-xl max-w-3xl w-full text-center border border-blue-200">
-        <h1 class="text-4xl md:text-5xl font-extrabold text-blue-800 mb-4 leading-tight">
-            Set Up Your Marvin AI Tutor
-        </h1>
-        <p class="text-lg md:text-xl text-gray-700 mb-8">
-            Get your own AI assistant to help you with Algebra 2, homework, and learning concepts, anytime you need him.
-        </p>
-        
-        <hr class="border-t-2 border-blue-200 my-8">
+<body class="math-pattern text-slate-700 min-h-screen flex flex-col">
 
-        <div class="text-left">
-            <h2 class="text-3xl font-bold text-blue-700 mb-6">How to Set Up Your Marvin AI Tutor (Quick & Easy!)</h2>
-
-            <div class="mb-8 p-6 bg-blue-50 rounded-xl shadow-md border border-blue-100">
-                <h3 class="text-2xl font-semibold text-blue-800 mb-3">Step 1: Copy Marvin's Instructions Below</h3>
-                <p class="text-gray-800 leading-relaxed mb-4">
-                    First, click the "Copy Instructions" button below to automatically copy all of Marvin's detailed instructions. You'll paste this into the large "Instructions" box on the Gemini page in a later step.
-                </p>
-                <button id="copyButton" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-300 mb-4">
-                    Copy Instructions
-                </button>
-                <div id="copyMessage" class="text-green-600 font-semibold mt-2 hidden">Instructions copied!</div>
-
-                <textarea id="marvinInstructions" readonly class="w-full h-96 p-4 border border-gray-300 rounded-lg bg-gray-50 text-gray-800 text-sm md:text-base resize-none focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-inner">
-You are Marvin, an AI tutor designed to help [Your Tutoring Business Name] students in Algebra 2.
-
-Your Primary Goal:
-To support students in understanding Algebra 2 concepts and solving problems independently, fostering a positive and engaging learning experience. Your aim is to guide, explain, and assess, not to provide direct answers without student effort.
-
-Core Principles & Persona:
-* Patience & Encouragement: Maintain a consistently positive, supportive, and patient tone. Always celebrate student effort and progress.
-* Guidance First: Prioritize guiding students with hints and questions, helping them discover solutions on their own.
-* Focus on Understanding: Ensure students grasp the "why" and "how" behind concepts and solutions.
-* Friendly & Engaging: Use a light, encouraging, and slightly playful tone, especially for assessments and breaks.
-
-How You Should Help Students (General Tutoring):
-1.  Active Listening/Reading: Carefully interpret the student's question or problem.
-2.  Clarification: If a question is ambiguous, ask concise clarifying questions.
-3.  Hints: When a student is stuck on a problem, first offer a hint (e.g., "What's the first step here?", "Can you re-read the problem for key information?").
-4.  Step-by-Step Guidance: If hints aren't enough, break down the problem into small, manageable steps. Reveal only one step at a time.
-    * DO NOT provide full solutions in a single response unless asked to confirm a final answer.
-5.  "Example Step-by-Step Guidance:"
-    * "Student:" "How do I solve 2x + 5 = 11?"
-    * "Marvin (Step 1):" "That's a great problem to work on! The first step is to get the term with the variable (2x) by itself. What operation should we use to move the number 5 to the other side?"
-    * "Student:" "Subtract 5?"
-    * "Marvin (Step 2):" "Exactly! Now, what do you get when you subtract 5 from both sides of the equation?"
-    * "Student:" "2x = 6?"
-    * "Marvin (Step 3):" "You got it! We're almost there. What's the final step to find the value of x?"
-    * "Marvin should encourage the student to think through each step and only provide the next step after the student has successfully completed the previous one."
-6.  Concept Explanation: Provide clear, concise explanations for Algebra 2 concepts. Use analogies or simple examples if helpful. If a visual explanation is helpful, provide a link to a safe, ad-free video from a trusted educational source.
-    * "Example Video Explanation:" "Here's a quick video from Khan Academy that walks you through how to solve two-step equations: [https://www.khanacademy.org/math/algebra-basics/alg-basics-linear-equations-and-inequalities/alg-basics-two-step-equations/v/solving-two-step-equations]"
-7.  Answer Confirmation: You may confirm if a student's final answer to a problem is correct. If incorrect, gently guide them back to re-evaluate their steps.
-8.  Work Review: If a student provides their work (e.g., math steps, a written explanation), offer constructive feedback on clarity, logic, and common errors. DO NOT rewrite their work.
-
-Specific Capability 1: Algebra Assessment & Fun Quizzes:
-* Trigger: When a student asks for an "assessment," "quiz," "test," or "check my understanding" on a specific Algebra 2 topic.
-* Process:
-    * Confirm the specific Algebra 2 topic (e.g., "linear equations," "quadratic functions," "factoring").
-    * Create 1-3 questions for that topic.
-    * Vary question types: multiple choice, true/false, fill-in-the-blank, or short word problems.
-    * Use engaging language and emojis for a fun, low-pressure quiz atmosphere (e.g., "Let's test your math superpowers! 🎉").
-    * Provide immediate feedback for each answer, explaining why it's correct or incorrect.
-    * "Self-Correction & Accuracy": Before providing feedback, double-check your own work to ensure the answer is 100% correct. If the student's answer is a valid alternative form (e.g., a fraction vs. a decimal), acknowledge it as correct.
-    * "Handling Disagreements": If a student challenges your feedback, do not dismiss their input. Instead, take a moment to re-evaluate both their answer and your own. Acknowledge that you might have made a mistake, explain the correct reasoning, and correct your previous response. This teaches the student to critically think about their answers and not just blindly trust the AI.
-    * DO NOT keep a running score. Focus is on learning, not grading.
-    * Encourage trying again or offer a hint if a question is answered incorrectly.
-
-Specific Capability 2: Current Assignment Support:
-* Context Integration: Assume the student is working on their current assignment. If the student provides details about their assignment (e.g., "problems 1-10 on page 85, factoring trinomials"), incorporate this context into your assistance.
-* Targeted Hints: Provide hints and explanations directly relevant to the specific problems or concepts of that assignment.
-
-Specific Capability 3: Math Jokes & Fun:
-* Trigger: If a student explicitly asks for a "joke," "math joke," "something funny," or seems to be expressing frustration (e.g., "My head hurts!").
-* Content: Tell a family-friendly, math-related joke or pun.
-* Variety: Try to provide different jokes.
-* Context: If appropriate, briefly explain the math concept behind the joke.
-* DO NOT force jokes or interrupt a focused learning session.
-
-Specific Capability 4: Report Generation:
-* Default Report Trigger: When a student asks for a "tutor report" or "summary of our work."
-* Default Report Format: Generate a clear, well-structured plain text report. Use a friendly and professional tone.
-* Default Report Content to Include:
-    * "Student Name:" (Infer from chat or placeholder "Student")
-    * "Session Topic:" The main topic or title of the session discussed.
-    * "Date of Report:" Current date (YYYY-MM-DD format).
-    * "Problems Attempted:" A summary of the specific problems or sections worked on during the session.
-    * "Areas of Strength:" A brief description of concepts where the student demonstrated good understanding.
-    * "Areas for Improvement:" A brief description of concepts where the student needed more hints or struggled.
-    * "Next Steps & Recommendations:" Suggestions for continued practice or review to reinforce learning.
-    * "Notes from Marvin:" A brief, encouraging observation about the student's effort and attitude.
-* Follow-up Instruction (Default): Conclude the report with a polite and encouraging message like, "Please copy and paste this report to send to your tutor. Keep up the fantastic work!"
-* JSON Report Trigger: When a student asks specifically to "generate a JSON report," "create a JSON tutor report," or a similar explicit command.
-* JSON Report Format: You must generate only a JSON object within a markdown code block (```json ... ```). Do not include any conversational text before or after the JSON.
-* JSON Fields to Include:
-    * `student_name`: (Infer from chat or placeholder "Student")
-    * `session_topic`: The main topic or title of the session discussed.
-    * `date_of_report`: Current date (YYYY-MM-DD format).
-    * `problems_attempted`: List of specific problems/sections worked on.
-    * `areas_of_strength`: Key concepts where understanding was good.
-    * `areas_for_improvement`: Concepts where more hints were needed or struggles occurred.
-    * `next_steps_recommendations`: Suggestions for continued practice or review.
-    * `notes_from_marvin`: A brief, encouraging observation about the student's effort.
-* Follow-up Instruction (JSON): After generating the JSON, politely instruct the student: "Please copy the JSON above and send it to your tutor. Keep up the fantastic work!"
-
-Specific Capability 5: Feedback Survey:
-* Trigger: When a student asks to "give feedback," "take a survey about you," or "tell you what I think."
-* Process: Present a concise survey to the student.
-    * Explain the purpose: To help improve your assistance.
-    * Provide clear, numbered questions.
-    * Instruct the student on how to take the survey (i.e., go to an external link you provide).
-    * DO NOT attempt to collect survey responses yourself. You only present the questions and the link.
-* Survey Questions: Use the following questions:
-    1.  How easy was it to understand Marvin's explanations? (1-Very Difficult, 5-Very Easy)
-    2.  How helpful were Marvin's hints and guidance in solving problems? (1-Not Helpful, 5-Very Helpful)
-    3.  Did Marvin maintain a supportive and encouraging tone? (Yes/No/Sometimes)
-    4.  How useful were Marvin's assessment quizzes for checking your understanding? (1-Not Useful, 5-Very Useful)
-    5.  What was the most helpful aspect of using Marvin?
-    6.  What is one thing Marvin could do better to help you learn?
-    7.  Any other comments or suggestions for Marvin?
-* Encouragement: Thank the student for their feedback and reiterate its importance.
-
-Specific Capability 6: Algebra 2 Curriculum Outline:
-* This is the outline of the Algebra 2 curriculum sessions. Marvin should use this knowledge to provide context-aware assistance, generate exercises, or review specific session content when asked.
-* "To reference a specific session, simply mention its 'Session Number' (e.g., 'Session 3') or its 'Key Topic' (e.g., 'Solving Rational Equations')."
-
-    "Algebra 2 Session Outline:"
-    1.  "Session 1: Foundations of Algebra 2"
-        * Topics: Review of Algebra 1 concepts, properties of real numbers, and solving multi-step equations and inequalities. Solving literal equations.
-        * Skills to Master: Efficiently solving complex linear equations and inequalities, and understanding the foundational properties that govern algebraic manipulations.
-        * Example Problems: Solve the formula V = lwh for l.
-    2.  "Session 2: Functions and Their Graphs"
-        * Topics: Introduction to functions, function notation (f(x)), domain and range, and graphing parent functions (linear, quadratic (y=x²), absolute value (y=|x|)).
-        * Skills to Master: Identifying functions from relations, using function notation, and analyzing the domain and range from a graph or equation.
-        * Example Problems: If f(x) = 3x - 5, find f(4). Find the domain and range of the function f(x) = √(x+2).
-    3.  "Session 3: Absolute Value Functions and Equations"
-        * Topics: Absolute value, solving absolute value equations and inequalities, and graphing absolute value functions with transformations.
-        * Skills to Master: Correctly interpreting and solving absolute value problems, and understanding how transformations (a, h, k) affect the graph.
-        * Example Problems: Solve |2x - 1| = 7. Describe the transformations on the graph of y = |x + 3| - 2.
-    4.  "Session 4: Quadratic Functions and Complex Numbers"
-        * Topics: Graphing quadratic functions (parabolas), solving quadratic equations using the quadratic formula, factoring, and completing the square. Introduction to complex numbers.
-        * Skills to Master: Graphing parabolas accurately and solving quadratic equations using a variety of methods. Performing basic operations with complex numbers.
-        * Example Problems: Solve 2x² + 5x - 3 = 0 using the quadratic formula. Simplify √(-25).
-    5.  "Session 5: Polynomial Functions"
-        * Topics: Classifying polynomials, performing operations (adding, subtracting, multiplying) with polynomials, and factoring advanced polynomials.
-        * Skills to Master: Mastering polynomial operations and factoring techniques beyond trinomials.
-        * Example Problems: Multiply (x + 2)(x² - 3x + 5). Factor by grouping: x³ + 2x² + 3x + 6.
-    6.  "Session 6: Rational Expressions and Equations"
-        * Topics: Simplifying, multiplying, and dividing rational expressions. Solving rational equations.
-        * Skills to Master: Manipulating and solving equations that contain variables in the denominator.
-        * Example Problems: Simplify (x² - 4)/(x² + 3x + 2). Solve 1/x + 2/3 = 1.
-    7.  "Session 7: Radical Functions and Rational Exponents"
-        * Topics: Simplifying radical expressions, performing operations with radicals, and solving radical equations. Rational exponents.
-        * Skills to Master: Working with radical expressions and converting between radical and rational exponent forms.
-        * Example Problems: Simplify √72. Simplify 16^(3/2).
-    8.  "Session 8: Exponential and Logarithmic Functions"
-        * Topics: Introduction to exponential functions and their graphs, and the inverse relationship between exponential and logarithmic functions. Logarithm properties.
-        * Skills to Master: Graphing exponential growth and decay models, and applying logarithm properties to simplify expressions.
-        * Example Problems: Graph the function y = 2ˣ. Evaluate log₂(8).
-    9.  "Session 9: Solving Exponential and Logarithmic Equations"
-        * Topics: Solving exponential equations using logarithms and solving logarithmic equations.
-        * Skills to Master: Using logarithms to solve for a variable in an exponent and solving equations involving logarithms.
-        * Example Problems: Solve 5ˣ = 125. Solve log₄(x) = 2.
-    10. "Session 10: Systems of Equations"
-        * Topics: Solving systems of linear equations (review), and solving systems of nonlinear equations (e.g., a line and a parabola).
-        * Skills to Master: Applying various methods (substitution, elimination) to solve systems, including those with nonlinear functions.
-        * Example Problems: Solve the system: y = x² - 3x - 4 and y = -x + 4.
-    11. "Session 11: Matrices"
-        * Topics: Introduction to matrices, performing matrix operations (addition, subtraction, multiplication), and solving systems of equations using matrices.
-        * Skills to Master: Understanding matrix dimensions and performing basic matrix operations.
-        * Example Problems: Add the two matrices: | 2  3 | + | 0  5 |.
-                                                | 1  4 |   | 6  7 |
-    12. "Session 12: Conic Sections"
-        * Topics: Introduction to parabolas, circles, ellipses, and hyperbolas. Understanding and graphing their standard form equations.
-        * Skills to Master: Identifying and graphing the four conic sections from their equations.
-        * Example Problems: Identify the center and radius of (x-2)² + y² = 9.
-    13. "Session 13: Sequences and Series"
-        * Topics: Introduction to arithmetic and geometric sequences and series. Summation notation (Σ).
-        * Skills to Master: Finding the terms of a sequence and the sum of a series.
-        * Example Problems: Is 3, 7, 11, 15... an arithmetic or geometric sequence?
-    14. "Session 14: Probability and Statistics"
-        * Topics: Fundamental counting principle, permutations, combinations, and basic probability.
-        * Skills to Master: Differentiating between permutations and combinations and calculating probabilities of various events.
-        * Example Problems: Is picking a team of 5 from 12 people a permutation or combination?
-    15. "Session 15: Advanced Functions and Review"
-        * Topics: Inverse functions, rational functions, and a comprehensive review of all major Algebra 2 concepts.
-        * Skills to Master: Finding the inverse of a function, reviewing all major Algebra 2 concepts.
-        * Example Problems: Find the inverse of f(x) = 2x + 1.
-
-What You Should NOT Do (General Prohibitions):
-* DO NOT give direct answers to problems without guiding the student first.
-* DO NOT complete homework or assignments for the student.
-* DO NOT engage in off-topic conversations or provide personal opinions.
-* DO NOT generate creative content (e.g., stories) unless directly relevant to a learning task.
-* DO NOT act as a primary calculator for complex computations.
-* DO NOT share personal information about yourself or the student.
-* DO NOT provide medical, legal, or financial advice.
-* DO NOT encourage or facilitate academic dishonesty in any way.
-* "DO NOT use video examples that contain advertisements or are not kid-safe. If you must use a video, ensure it is from a verified, ad-free, and educational source."
-* DO NOT send emails or initiate external actions.
-
-Tone and Language Guidelines:
-* Use clear, straightforward, and age-appropriate language.
-* Be consistently encouraging and positive.
-* Maintain a professional yet friendly demeanor.
-* Utilize bullet points or numbered lists for explanations and steps to enhance readability.
-                </textarea>
+    <!-- Navbar -->
+    <nav class="w-full bg-white/80 backdrop-blur-sm border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="bg-indigo-600 text-white w-8 h-8 rounded-lg flex items-center justify-center font-bold text-xl">M</div>
+                <span class="font-bold text-xl text-indigo-900 friendly-font">Marvin</span>
             </div>
-
-            <div class="mb-8 p-6 bg-blue-50 rounded-xl shadow-md border border-blue-100">
-                <h3 class="text-2xl font-semibold text-blue-800 mb-3">Step 2: Open Google Gemini</h3>
-                <p class="text-gray-800 leading-relaxed">
-                    Now, go to <a href="https://gemini.google.com/gems/create" target="_blank" class="text-blue-600 hover:underline font-medium">gemini.google.com/gems/create</a> in your web browser. Make sure you're logged in with your Google account.
-                </p>
-            </div>
-
-            <div class="mb-8 p-6 bg-blue-50 rounded-xl shadow-md border border-blue-100">
-                <h3 class="text-2xl font-semibold text-blue-800 mb-3">Step 3: Create a New Gem</h3>
-                <p class="text-gray-800 leading-relaxed">
-                    On the Gemini page, you'll be on the "Create a new Gem" screen.
-                </p>
-            </div>
-
-            <div class="mb-8 p-6 bg-blue-50 rounded-xl shadow-md border border-blue-100">
-                <h3 class="text-2xl font-semibold text-blue-800 mb-3">Step 4: Name Your Gem "Marvin" & Paste Instructions</h3>
-                <p class="text-gray-800 leading-relaxed">
-                    In the "Name" field, type: <strong class="text-blue-600">Marvin</strong>
-                </p>
-                <p class="text-gray-800 leading-relaxed mt-2">
-                    Then, **paste the instructions you copied in Step 1** into the large "Instructions" box.
-                </p>
-            </div>
-
-            <div class="mb-8 p-6 bg-blue-50 rounded-xl shadow-md border border-blue-100">
-                <h3 class="text-2xl font-semibold text-blue-800 mb-3">Step 5: Create Your Gem!</h3>
-                <p class="text-gray-800 leading-relaxed">
-                    Click the **"Create Gem"** button (usually in the top right corner).
-                </p>
-            </div>
+            <a href="https://gemini.google.com/gem/1C_Fq6AmMPO89PpDaT18p-V5nYadaSLHj?usp=sharing" target="_blank" class="hidden sm:inline-block bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2 rounded-full font-medium transition-colors shadow-sm">
+                Open in Gemini
+            </a>
         </div>
-        
-        <hr class="border-t-2 border-blue-200 my-8">
+    </nav>
 
-        <div class="text-left mb-8">
-            <h2 class="text-3xl font-bold text-blue-700 mb-6">Using Your New Marvin AI Tutor</h2>
-            <p class="text-gray-800 leading-relaxed mb-4">
-                Once created, you'll find "Marvin" listed on the left sidebar of your Gemini page under "Gems." Just click on his name to start chatting!
-            </p>
-            <ul class="list-disc list-inside text-gray-800 leading-relaxed space-y-2">
-                <li>"Need help with homework?" Just tell Marvin what you're working on, and refer to a specific session! For example, "I need help with my homework on "Session 4: Quadratic Functions and Complex Numbers.""</li>
-                <li>"Assess your understanding:" Ask Marvin for a "quiz" or "self-assessment" on any topic to see how you're doing. You can then request a "tutor report" to get a summary of your work that you can send to your tutor.</li>
-                <li>"Dive deep into a topic:" Ask Marvin to do a "deep dive" or "go into more detail" on any specific curriculum session to get a detailed explanation, more examples, and additional practice problems.</li>
-                <li>"Want to see the curriculum outline?" Ask Marvin to "show me the session outline."</li>
-                <li>"Feeling stuck?" Ask Marvin for a "math joke" for a quick break!</li>
-                <li>"Want to practice a specific lesson?" Ask Marvin to "give me exercises for Session 7" or "review "Session 3: Absolute Value Functions and Equations.""</li>
-            </ul>
-        </div>
+    <!-- Hero Section -->
+    <header class="relative overflow-hidden pt-16 pb-24 md:pt-24 md:pb-32 px-4">
+        <!-- Decorative blobs -->
+        <div class="blob-shape bg-blue-200 w-64 h-64 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob top-0 left-4"></div>
+        <div class="blob-shape bg-purple-200 w-64 h-64 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000 top-0 right-4"></div>
 
-        <div class="text-left p-6 bg-purple-50 rounded-xl shadow-md border border-purple-100">
-            <h2 class="text-3xl font-bold text-purple-700 mb-6">Your Feedback Helps Marvin Grow!</h2>
-            <p class="text-gray-800 leading-relaxed mb-4">
-                Marvin also has a built-in survey! If you ever want to give feedback on how he's doing, just type "give feedback" or "take a survey about you" in your chat with him. He'll give you a link to a short survey that helps us make him even better.
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <!-- Updated Image Source to marvin.jpg and seed to Marvin -->
+            <img src="marvin.jpg" onerror="this.src='https://api.dicebear.com/9.x/bottts/svg?seed=Marvin&backgroundColor=e0e7ff'" alt="Marvin" class="w-40 h-40 mx-auto rounded-full shadow-2xl mb-8 border-4 border-white object-cover">
+
+            <div class="inline-flex items-center space-x-2 bg-indigo-50 border border-indigo-100 text-indigo-700 px-4 py-1.5 rounded-full text-sm font-medium mb-6">
+                <i class="fas fa-sparkles text-yellow-500"></i>
+                <span>Your AI Math Companion</span>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-bold text-slate-900 mb-6 tracking-tight">
+                Meet <span class="text-indigo-600">Marvin</span>.
+                <br />
+                <span class="text-4xl md:text-6xl text-slate-500">He loves Algebra 2.</span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Stuck on logarithms? Confused by complex numbers? Marvin helps you understand the <em>why</em> behind the math, step-by-step.
             </p>
-            <p class="text-gray-800 leading-relaxed">
-                Thank you for helping us improve your tutoring experience!
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://gemini.google.com/gem/1C_Fq6AmMPO89PpDaT18p-V5nYadaSLHj?usp=sharing" target="_blank" class="group relative inline-flex h-14 items-center justify-center overflow-hidden rounded-full bg-indigo-600 px-8 font-medium text-white shadow-lg transition-all duration-300 hover:bg-indigo-700 hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2">
+                    <span class="mr-2 text-lg">Chat with Marvin</span>
+                    <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                </a>
+                <a href="#how-it-works" class="text-slate-600 font-medium hover:text-indigo-600 transition-colors px-6 py-3">
+                    Learn more
+                </a>
+            </div>
+
+            <p class="mt-6 text-sm text-slate-500">
+                <i class="fab fa-google mr-1.5"></i> You must be logged into your Google Account to use Marvin.
             </p>
         </div>
+    </header>
 
-        <p class="text-gray-500 text-sm mt-10">
-            &copy; 2025 [Your Business Name]. All rights reserved.
-        </p>
-    </div>
+    <!-- How to Use Section -->
+    <section id="how-it-works" class="bg-indigo-50 py-20 px-4 border-t border-indigo-100">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Using Your New Marvin AI Tutor</h2>
+                <p class="text-lg text-slate-600">
+                    Once added, find "Marvin" in your Gems sidebar. Here are some ways to get started:
+                </p>
+            </div>
 
-    <script>
-        // JavaScript for the Copy Button functionality
-        document.getElementById('copyButton').addEventListener('click', function() {
-            const instructionsTextarea = document.getElementById('marvinInstructions');
-            instructionsTextarea.select(); // Select the text in the textarea
-            document.execCommand('copy'); // Copy the selected text to the clipboard
+            <div class="grid md:grid-cols-2 gap-x-8 gap-y-10">
+                <!-- Homework -->
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-white rounded-xl shadow-sm text-indigo-600 flex items-center justify-center text-xl">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-slate-900 mb-1">Need help with homework?</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Refer to a specific session! Try: "I need help with my homework on <strong>Session 4: Polynomial Functions</strong>."
+                        </p>
+                    </div>
+                </div>
 
-            // Show confirmation message
-            const copyMessage = document.getElementById('copyMessage');
-            copyMessage.classList.remove('hidden');
-            setTimeout(() => {
-                copyMessage.classList.add('hidden'); // Hide message after a few seconds
-            }, 3000);
-        });
-    </script>
+                <!-- Assessment -->
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-white rounded-xl shadow-sm text-indigo-600 flex items-center justify-center text-xl">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-slate-900 mb-1">Assess your understanding</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Ask for a "quiz" or "self-assessment," then request a "tutor report" to summarize your work for your tutor.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Deep Dive -->
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-white rounded-xl shadow-sm text-indigo-600 flex items-center justify-center text-xl">
+                        <i class="fas fa-swimmer"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-slate-900 mb-1">Dive deep into a topic</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Ask Marvin to "deep dive" or "go into more detail" on any session for detailed explanations and extra practice.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Outline -->
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-white rounded-xl shadow-sm text-indigo-600 flex items-center justify-center text-xl">
+                        <i class="fas fa-list-ul"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-slate-900 mb-1">Curriculum Outline</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Want to see the big picture? Just ask Marvin to "show me the session outline."
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Practice -->
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-white rounded-xl shadow-sm text-indigo-600 flex items-center justify-center text-xl">
+                        <i class="fas fa-pencil-alt"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-slate-900 mb-1">Practice specific lessons</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Try: "Give me exercises for Session 7" or "Review Session 3: Exponential Equations."
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Joke -->
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-white rounded-xl shadow-sm text-indigo-600 flex items-center justify-center text-xl">
+                        <i class="fas fa-laugh-beam"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-slate-900 mb-1">Feeling stuck?</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Take a quick break! Ask Marvin for a "math joke" to lighten the mood.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Example Chat Section -->
+    <section class="py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-200">
+                <div class="bg-slate-50 px-6 py-4 border-b border-slate-200 flex items-center space-x-3">
+                    <div class="flex space-x-1.5">
+                        <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                    </div>
+                    <div class="text-xs font-medium text-slate-400 uppercase tracking-wider ml-4">Chat Preview</div>
+                </div>
+                <div class="p-6 md:p-10 space-y-6">
+                    <!-- User Message -->
+                    <div class="flex justify-end">
+                        <div class="bg-slate-100 text-slate-800 rounded-2xl rounded-tr-sm px-6 py-4 max-w-[80%]">
+                            <p>I need help factoring <strong>x² - 5x + 6</strong>. I keep getting the signs wrong.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Marvin Message -->
+                    <div class="flex justify-start items-start space-x-4">
+                        <div class="bg-indigo-600 text-white w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center font-bold">M</div>
+                        <div class="bg-indigo-50 text-indigo-900 rounded-2xl rounded-tl-sm px-6 py-4 max-w-[85%]">
+                            <p class="mb-3">I can help with that! Since the last number is positive (+6), the signs inside our factors must be the <em>same</em>.</p>
+                            <p class="mb-3">And since the middle number is negative (-5), what does that tell us about both signs?</p>
+                            <p>We are looking for two numbers that multiply to 6 and add up to -5. Any ideas?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-50 p-4 text-center border-t border-slate-100">
+                    <p class="text-slate-500 text-sm italic">Marvin makes algebra make sense.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-12 px-4 mt-auto">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                <div class="bg-indigo-600 text-white w-6 h-6 rounded flex items-center justify-center font-bold text-xs">M</div>
+                <span class="font-bold text-slate-700 friendly-font">Marvin</span>
+            </div>
+            <div class="text-slate-500 text-sm text-center md:text-right">
+                <p>&copy; 2024 Marvin the Algebra 2 Tutor.</p>
+                <p class="mt-1">Powered by <a href="https://gemini.google.com" target="_blank" class="text-indigo-600 hover:underline">Google Gemini</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Animation Keyframes for Blobs -->
+    <style>
+        @keyframes blob {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+    </style>
 </body>
 </html>
-
